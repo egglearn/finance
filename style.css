@@ -19,11 +19,15 @@ p {
 }
 
 .box {
-  padding: 10em;
+  padding: 20em;
   background: yellow;
   border: solid 2px black;
   margin: 5px;
   border-radius: 25px;
+}
+
+.answerbox {
+  padding: 10em;
 }
 
 .two,
