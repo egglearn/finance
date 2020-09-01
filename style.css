@@ -14,6 +14,10 @@ h1 {
   margin-bottom: 40px;
 }
 
+p {
+  white-space: nowrap;
+}
+
 .box {
   padding: 10em;
   background: yellow;
