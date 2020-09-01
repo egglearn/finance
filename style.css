@@ -24,6 +24,7 @@ p {
   border: solid 2px black;
   margin: 5px;
   border-radius: 25px;
+  text-align: center;
 }
 
 .answerbox {
@@ -47,14 +48,9 @@ p {
   width: 100px;
   font-weight: 400;
   margin: 10px;
+  text-align: center;
 }
 
 .btn:hover {
   background: lightslategrey;
-}
-
-@media (max-width: 300px) {
-  .container {
-    width: 350px;
-  }
 }
