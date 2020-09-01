@@ -50,6 +50,10 @@ answerFour.addEventListener("click", function () {
     displayAnswerFour.innerText =
       "The Bank of England use interest rates and influencing the money supply to implement this policy.- Monetary Policy. Fiscal policy is the attempt to influence the level of economic activity through changing taxation and government spending.";
     boxFour.appendChild(displayAnswerFour);
+    const finished = document.createElement("div");
+    finished.innerText = "The Test is Finished";
+    boxFour.appendChild(finished);
+
     clickedFour = true;
   }
 });

@@ -6,7 +6,7 @@ body {
 }
 
 .container {
-  width: 800px;
+  max-width: 600px;
   margin: 0 auto;
 }
 
@@ -27,6 +27,11 @@ h1 {
   background: lightgrey;
 }
 
+.finished {
+  font-family: "Times New Roman", Times, serif;
+  margin: 20px;
+}
+
 .btn {
   background: lightskyblue;
   border-radius: 10px;
@@ -38,4 +43,10 @@ h1 {
 
 .btn:hover {
   background: lightslategrey;
+}
+
+@media (max-width: 300px) {
+  .container {
+    width: 350px;
+  }
 }
