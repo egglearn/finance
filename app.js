@@ -18,7 +18,6 @@ let clickedFour = false;
 answerOne.addEventListener("click", function () {
   if (!clickedOne) {
     const displayAnswerOne = document.createElement("div");
-    displayAnswerOne.className = "answerbox";
     displayAnswerOne.innerText =
       "The S&P is a stock market index that measures the stock performance of 500 large companies listed on stock exchanges in the United States.";
     boxOne.appendChild(displayAnswerOne);
@@ -29,7 +28,6 @@ answerOne.addEventListener("click", function () {
 answerTwo.addEventListener("click", function () {
   if (!clickedTwo) {
     const displayAnswerTwo = document.createElement("div");
-    displayAnswerTwo.className = "answerbox";
     displayAnswerTwo.innerText =
       "The lifetime Isa (LISA) is a tax-free savings or investments account designed to help those aged 18-39 buy their first home or save for retirement.";
     boxTwo.appendChild(displayAnswerTwo);
@@ -40,7 +38,6 @@ answerTwo.addEventListener("click", function () {
 answerThree.addEventListener("click", function () {
   if (!clickedThree) {
     const displayAnswerThree = document.createElement("div");
-    displayAnswerThree.className = "answerbox";
     displayAnswerThree.innerText = "annual percentage rate";
     boxThree.appendChild(displayAnswerThree);
     clickedThree = true;
@@ -50,15 +47,9 @@ answerThree.addEventListener("click", function () {
 answerFour.addEventListener("click", function () {
   if (!clickedFour) {
     const displayAnswerFour = document.createElement("div");
-    displayAnswerFour.className = "answerbox";
     displayAnswerFour.innerText =
       "The Bank of England use interest rates and influencing the money supply to implement this policy.- Monetary Policy. Fiscal policy is the attempt to influence the level of economic activity through changing taxation and government spending.";
     boxFour.appendChild(displayAnswerFour);
-    const finished = document.createElement("div");
-    finished.innerText = "The Test is Finished";
-    finished.className = "finished";
-    boxFour.appendChild(finished);
-
     clickedFour = true;
   }
 });

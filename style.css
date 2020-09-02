@@ -6,7 +6,7 @@ body {
 }
 
 .container {
-  max-width: 600px;
+  width: 800px;
   margin: 0 auto;
 }
 
@@ -14,31 +14,17 @@ h1 {
   margin-bottom: 40px;
 }
 
-p {
-  white-space: nowrap;
-}
-
 .box {
-  padding: 20em;
+  padding: 10em;
   background: yellow;
   border: solid 2px black;
   margin: 5px;
   border-radius: 25px;
-  text-align: center;
-}
-
-.answerbox {
-  padding: 10em;
 }
 
 .two,
 .four {
   background: lightgrey;
-}
-
-.finished {
-  font-family: "Times New Roman", Times, serif;
-  margin: 20px;
 }
 
 .btn {
@@ -48,7 +34,6 @@ p {
   width: 100px;
   font-weight: 400;
   margin: 10px;
-  text-align: center;
 }
 
 .btn:hover {
