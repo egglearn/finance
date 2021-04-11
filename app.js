@@ -15,84 +15,74 @@ const boxFour = document.querySelector(".four");
 const answerFour = document.querySelector(".answer-four");
 let clickedFour = false;
 
-
 var provider = new firebase.auth.GoogleAuthProvider();
 
-
-
-
-  var firebaseConfig = {
-    apiKey: "AIzaSyCR5ZwXAjWfft2QgqJfbREISonxYsftTbs",
-    authDomain: "habits-4ad0c.firebaseapp.com",
-    projectId: "habits-4ad0c",
-    storageBucket: "habits-4ad0c.appspot.com",
-    messagingSenderId: "588630235509",
-    appId: "1:588630235509:web:213a6b2c7b47612662db3c"
-  };
-  // Initialize Firebase
+var firebaseConfig = {
+  apiKey: "AIzaSyCR5ZwXAjWfft2QgqJfbREISonxYsftTbs",
+  authDomain: "habits-4ad0c.firebaseapp.com",
+  projectId: "habits-4ad0c",
+  storageBucket: "habits-4ad0c.appspot.com",
+  messagingSenderId: "588630235509",
+  appId: "1:588630235509:web:213a6b2c7b47612662db3c",
+};
+// Initialize Firebase
 
 firebase.initializeApp(firebaseConfig);
 
-
-
-function callGoogleSignIn(){
+function callGoogleSignIn() {
   var provider = new firebase.auth.GoogleAuthProvider();
-  firebase.auth().signInWithPopup(provider).then(function(result) {
-    console.log("i ran")
-       // This gives you a Google Access Token. You can use it to access the Google API.
-        var token = result.credential.accessToken;
-       // The signed-in user info.
-       var user = result.user;
-       // ...
- }).catch(function(error) {
-     // Handle Errors here.
-       var errorCode = error.code;
-       var errorMessage = error.message;
-       // The email of the user's account used.
-       var email = error.email;
-       // The firebase.auth.AuthCredential type that was used.
-       var credential = error.credential;
-    // ...
- });
+  firebase
+    .auth()
+    .signInWithPopup(provider)
+    .then(function (result) {
+      console.log("i ran");
+      // This gives you a Google Access Token. You can use it to access the Google API.
+      var token = result.credential.accessToken;
+      // The signed-in user info.
+      var user = result.user;
+      // ...
+    })
+    .catch(function (error) {
+      // Handle Errors here.
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      // The email of the user's account used.
+      var email = error.email;
+      // The firebase.auth.AuthCredential type that was used.
+      var credential = error.credential;
+      // ...
+    });
 }
-
 
 function signOut() {
   // [START auth_sign_out]
-  firebase.auth().signOut().then(() => {
-    // Sign-out successful.
-    console.log("sign out successful")
-  }).catch((error) => {
-    // An error happened.
-  });
+  firebase
+    .auth()
+    .signOut()
+    .then(() => {
+      // Sign-out successful.
+      console.log("sign out successful");
+    })
+    .catch((error) => {
+      // An error happened.
+    });
   // [END auth_sign_out]
 }
-
-
-
 
 // firebase.initializeApp(firebaseConfig)
 // const txtEmail= document.getElementById("txtEmail")
 // const txtPassword= document.getElementById("txtPassword")
-const btnLogin= document.getElementById("btnLogin")
+const btnLogin = document.getElementById("btnLogin");
 // const btnSignup= document.getElementById("btnSignup")
-const btnSignOut= document.getElementById("btnSignOut")
+const btnSignOut = document.getElementById("btnSignOut");
 
-btnLogin.addEventListener("click",function(){
-callGoogleSignIn()
-  });
+btnLogin.addEventListener("click", function () {
+  callGoogleSignIn();
+});
 
-  btnSignOut.addEventListener("click",function(){
-    signOut()
-      });
-    
-
-
-
-
-
-
-
+btnSignOut.addEventListener("click", function () {
+  signOut();
+});
 
 // signInRedirect()
 //  console.log("dsjeomog")
@@ -106,9 +96,6 @@ callGoogleSignIn()
 // promise.catch(e=> console.log(e.message))
 
 // })
-
-
-
 
 function tester(event) {
   console.log(document.getElementById("a").value);
@@ -152,4 +139,19 @@ answerFour.addEventListener("click", function () {
     boxFour.appendChild(displayAnswerFour);
     clickedFour = true;
   }
-})
+});
+
+let write = document.getElementById("write");
+
+var database = firebase.database();
+
+function writeUserData(something) {
+  firebase
+    .database()
+    .ref("users/" + something)
+    .set({
+      username: something,
+    });
+}
+
+write.addEventListener("click", writeUserData("dfsjfslfjl"));
