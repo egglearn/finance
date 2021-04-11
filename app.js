@@ -148,6 +148,7 @@ var database = firebase.database();
 function writeUserData(something) {
   firebase
     .database()
+    .child()
     .ref("users/" + something)
     .set({
       username: something,
