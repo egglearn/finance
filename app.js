@@ -149,8 +149,8 @@ var playersRef = firebase.database().ref("players");
 
 function writeUserData(something) {
   playersRef.set({
-    John: {
-      number: 1,
+    Benn: {
+      number: something,
       age: 30,
     },
 
@@ -161,4 +161,4 @@ function writeUserData(something) {
   });
 }
 
-write.addEventListener("click", writeUserData);
+write.addEventListener("click", writeUserData("foodies"));
