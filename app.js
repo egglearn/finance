@@ -145,7 +145,7 @@ answerFour.addEventListener("click", function () {
 
 let write = document.getElementById("write");
 
-var ref = firebase.database().ref("players");
+var playersRef = firebase.database().ref("players");
 
 function writeUserData(something) {
   playersRef.set({
