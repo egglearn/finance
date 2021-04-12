@@ -145,14 +145,20 @@ let write = document.getElementById("write");
 
 var database = firebase.database();
 
+var ref = firebase.database().ref("players");
+
 function writeUserData(something) {
-  firebase
-    .database()
-    .child()
-    .ref("users/" + something)
-    .set({
-      username: something,
-    });
+  playersRef.set({
+    John: {
+      number: 1,
+      age: 30,
+    },
+
+    Amanda: {
+      number: 2,
+      age: 20,
+    },
+  });
 }
 
-write.addEventListener("click", writeUserData("dfsjfslfjl"));
+write.addEventListener("click", writeUserData);
