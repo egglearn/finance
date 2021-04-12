@@ -15,6 +15,8 @@ const boxFour = document.querySelector(".four");
 const answerFour = document.querySelector(".answer-four");
 let clickedFour = false;
 
+let txttest = document.getElementById("txttest");
+
 var provider = new firebase.auth.GoogleAuthProvider();
 
 var firebaseConfig = {
@@ -161,4 +163,4 @@ function writeUserData(something) {
   });
 }
 
-write.addEventListener("click", writeUserData("foodies"));
+write.addEventListener("click", writeUserData(txttest.value));
