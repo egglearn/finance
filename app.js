@@ -150,6 +150,7 @@ let write = document.getElementById("write");
 var playersRef = firebase.database().ref("players");
 
 function writeUserData(something) {
+  e.preventDefault();
   playersRef.set({
     Benn: {
       number: something,
