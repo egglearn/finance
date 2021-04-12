@@ -143,8 +143,6 @@ answerFour.addEventListener("click", function () {
 
 let write = document.getElementById("write");
 
-var database = firebase.database();
-
 var ref = firebase.database().ref("players");
 
 function writeUserData(something) {
