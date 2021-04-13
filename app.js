@@ -173,9 +173,14 @@ read.addEventListener("click", function reader() {
   playersRef.on("value", function (snapshot) {
     snapshot.forEach(function (childSnapshot) {
       let data = childSnapshot.val();
-      console.log(data);
+      //console.log(data);
     });
 
-    //console.log(snapshot.val());
+    playersRef
+      .orderByChild("name")
+      .equalTo("Benjamin")
+      .on("child_added", function (data) {
+        console.log("Equal to filter: " + data.val().name);
+      });
   });
 });
