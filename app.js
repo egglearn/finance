@@ -170,13 +170,12 @@ function writeUserData(e) {
 write.addEventListener("click", writeUserData);
 
 read.addEventListener("click", function reader() {
-  playersRef.on(
-    "value",
-    function (snapshot) {
-      console.log(snapshot.val());
-    },
-    function (error) {
-      console.log("Error: " + error.code);
-    }
-  );
+  playersRef.on("value", function (snapshot) {
+    snapshot.forEach(function (childSnapshot) {
+      let data = childSnapshot;
+      console.log(data);
+    });
+
+    //console.log(snapshot.val());
+  });
 });
