@@ -155,8 +155,8 @@ function writeUserData(e) {
 
   playersRef.set({
     Benn: {
-      number: something,
-      age: 30,
+      number: data,
+      age: data,
     },
 
     Amanda: {
