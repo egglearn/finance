@@ -149,8 +149,10 @@ let write = document.getElementById("write");
 
 var playersRef = firebase.database().ref("players");
 
-function writeUserData(something) {
+function writeUserData(e) {
   e.preventDefault();
+  let data = txttest.value;
+
   playersRef.set({
     Benn: {
       number: something,
@@ -164,4 +166,4 @@ function writeUserData(something) {
   });
 }
 
-write.addEventListener("click", writeUserData(txttest.value));
+write.addEventListener("click", writeUserData);
