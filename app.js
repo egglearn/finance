@@ -153,7 +153,7 @@ function writeUserData(e) {
   e.preventDefault();
   let data = txttest.value;
 
-  playersRef.set({
+  playersRef.push({
     Benn: {
       number: data,
       age: data,
