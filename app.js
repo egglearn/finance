@@ -6,6 +6,7 @@ let clickedOne = false;
 const boxTwo = document.querySelector(".two");
 const answerTwo = document.querySelector(".answer-two");
 let clickedTwo = false;
+let read = document.getElementById("read");
 
 const boxThree = document.querySelector(".three");
 const answerThree = document.querySelector(".answer-three");
@@ -167,3 +168,15 @@ function writeUserData(e) {
 }
 
 write.addEventListener("click", writeUserData);
+
+read.addEventListener("click", function reader() {
+  playersRef.on(
+    "value",
+    function (snapshot) {
+      console.log(snapshot.val());
+    },
+    function (error) {
+      console.log("Error: " + error.code);
+    }
+  );
+});
