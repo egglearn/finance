@@ -156,12 +156,12 @@ function writeUserData(e) {
 
   playersRef.push({
     Benn: {
-      number: data,
+      name: data,
       age: data,
     },
 
     Amanda: {
-      number: 2,
+      name: 2,
       age: 20,
     },
   });
