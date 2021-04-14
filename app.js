@@ -175,12 +175,5 @@ read.addEventListener("click", function reader() {
       let data = childSnapshot.val();
       //console.log(data);
     });
-
-    playersRef
-      .orderByChild("name")
-      .equalTo("Benjamin")
-      .on("child_added", function (data) {
-        console.log("Equal to filter: " + data.val().name);
-      });
   });
 });
