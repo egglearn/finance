@@ -2,7 +2,7 @@ const container = document.querySelector(".container");
 const boxOne = document.querySelector(".one");
 const answerOne = document.querySelector(".answer-one");
 let clickedOne = false;
-
+let header = document.getElementById("header");
 const boxTwo = document.querySelector(".two");
 const answerTwo = document.querySelector(".answer-two");
 let clickedTwo = false;
@@ -155,9 +155,9 @@ function writeUserData(e) {
   let data = txttest.value;
 
   playersRef.push({
-    Benn: {
-      name: data,
-      age: data,
+    data: {
+      input1: data * 10,
+      input2: data * 1000,
     },
 
     Amanda: {
