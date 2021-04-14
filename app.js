@@ -176,8 +176,6 @@ read.addEventListener("click", function reader() {
       let data = childSnapshot.val();
       // console.log(data);
 
-      console.log(playerC);
-
       let recent = playersRef.orderByChild("Benn").LimitToFirst(2);
 
       console.log(recent);
