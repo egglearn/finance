@@ -149,7 +149,8 @@ answerFour.addEventListener("click", function () {
 let write = document.getElementById("write");
 
 var playersRef = firebase.database().ref("players");
-
+var playerC = firebase.database().child("players");
+//const query = playerC.orderByChild("data")
 function writeUserData(e) {
   e.preventDefault();
   let data = txttest.value;
@@ -173,7 +174,9 @@ read.addEventListener("click", function reader() {
   playersRef.on("value", function (snapshot) {
     snapshot.forEach(function (childSnapshot) {
       let data = childSnapshot.val();
-      console.log(data);
+      // console.log(data);
+
+      console.log(playerC);
     });
   });
 });
