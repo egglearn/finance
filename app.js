@@ -149,7 +149,7 @@ answerFour.addEventListener("click", function () {
 let write = document.getElementById("write");
 
 var playersRef = firebase.database().ref("players");
-var playerC = firebase.database().child("players");
+
 //const query = playerC.orderByChild("data")
 function writeUserData(e) {
   e.preventDefault();
@@ -177,6 +177,10 @@ read.addEventListener("click", function reader() {
       // console.log(data);
 
       console.log(playerC);
+
+      let recent = playersRef.orderByChild("Benn").LimitToFirst(2);
+
+      console.log(recent);
     });
   });
 });
