@@ -149,6 +149,7 @@ answerFour.addEventListener("click", function () {
 let write = document.getElementById("write");
 
 var playersRef = firebase.database().ref("players");
+var playersRefs = firebase.database().ref("players/");
 
 //const query = playerC.orderByChild("data")
 function writeUserData(e) {
@@ -156,15 +157,8 @@ function writeUserData(e) {
   let data = txttest.value;
 
   playersRef.push({
-    data: {
-      input1: data * 10,
-      input2: data * 1000,
-    },
-
-    Amanda: {
-      name: 2,
-      age: 20,
-    },
+    name: data,
+    interest: hockey,
   });
 }
 
@@ -176,9 +170,16 @@ read.addEventListener("click", function reader() {
       let data = childSnapshot.val();
       // console.log(data);
 
-      let recent = playersRef.orderByChild("Benn").LimitToFirst(2);
+      let recent = playersRef.orderByChild("name").equalTo("john");
 
       console.log(recent);
     });
   });
+
+  // playersRefs
+  //   .orderByChild("name")
+  //   .equalTo("John")
+  //   .on("child_added", function (data) {
+  //     console.log("Equal to filter: " + data.val().name);
+  //   });
 });
