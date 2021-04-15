@@ -158,7 +158,7 @@ function writeUserData(e) {
 
   playersRef.push({
     name: data,
-    interest: hockey,
+    interest: "hockey",
   });
 }
 
