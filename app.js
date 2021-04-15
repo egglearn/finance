@@ -176,10 +176,7 @@ read.addEventListener("click", function reader() {
   //     });
   //   });
 
-  playersRefs
-    .orderByChild("name")
-    .equalTo("John")
-    .on("child_added", function (data) {
-      console.log("Equal to filter: " + data.val().name);
-    });
+  playersRefs.orderByChild("name").on("child_added", function (data) {
+    console.log(data.val().name);
+  });
 });
