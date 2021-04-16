@@ -165,15 +165,15 @@ function writeUserData(e) {
 write.addEventListener("click", writeUserData);
 
 read.addEventListener("click", function reader() {
-  playersRef.on("value", function (snapshot) {
-    snapshot.forEach(function (childSnapshot) {
-      let data = childSnapshot.val();
-      let recent = data.orderByChild("name").equalTo(read.textContent);
-      console.log(recent);
-    });
-  });
-
-  // playersRefs.orderByChild("name").on("child_added", function (data) {
-  //   console.log(data.val().name);
+  // playersRef.on("value", function (snapshot) {
+  //   snapshot.forEach(function (childSnapshot) {
+  //     let data = childSnapshot.val();
+  //     let recent = data.orderByChild("name").equalTo(read.textContent);
+  //     console.log(recent);
+  //   });
   // });
+
+  let answer = playersRefs.orderByChild("name").equalTo(read.textContent);
+
+  console.log(answer);
 });
