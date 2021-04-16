@@ -171,7 +171,7 @@ read.addEventListener("click", function reader() {
 
       const test = document.createElement("div");
       test.textContent = datas;
-      container.appendChild("div");
+      container.appendChild(test);
     });
   });
 });
