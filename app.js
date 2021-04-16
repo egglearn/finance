@@ -167,8 +167,11 @@ write.addEventListener("click", writeUserData);
 read.addEventListener("click", function reader() {
   playersRef.on("value", function (snapshot) {
     snapshot.forEach(function (childSnapshot) {
-      let data = childSnapshot.val();
-      console.log(data);
+      let data = childSnapshot.val().name;
+
+      if ((data = read.textContent)) {
+        console.log(data);
+      }
     });
   });
 });
