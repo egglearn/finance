@@ -175,5 +175,5 @@ read.addEventListener("click", function reader() {
 
   let answer = playersRefs.orderByChild("name").equalTo(read.textContent);
 
-  console.log(answer);
+  console.log(answer());
 });
