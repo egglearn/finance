@@ -167,11 +167,11 @@ write.addEventListener("click", writeUserData);
 read.addEventListener("click", function reader() {
   playersRef.on("value", function (snapshot) {
     snapshot.forEach(function (childSnapshot) {
-      let data = childSnapshot.val().name;
+      let datas = childSnapshot.val().name;
 
-      if ((data = read.textContent)) {
-        console.log(data);
-      }
+      const test = document.createElement("div");
+      test.textContent = datas;
+      container.appendChild("div");
     });
   });
 });
