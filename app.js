@@ -168,7 +168,7 @@ read.addEventListener("click", function reader() {
   playersRef.on("value", function (snapshot) {
     snapshot.forEach(function (childSnapshot) {
       let data = childSnapshot.val();
-      let recent = playersRef.orderByChild("name").equalTo(read.textContent);
+      let recent = data.orderByChild("name").equalTo(read.textContent);
       console.log(recent);
     });
   });
